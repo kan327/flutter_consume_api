@@ -16,7 +16,7 @@ class Network {
   // method untuk melakukan request HTTP dengan metode POST
   postRequest({
     required String route, // alamat endpoint di server
-    required Map<String, String> data, // data yang dikirimkan dalam format Map
+    required Map<String, dynamic> data, // data yang dikirimkan dalam format Map
     String token = '',
   }) async {
     String url = _url + route; // menggabungkan URL server dan alamat endpoint

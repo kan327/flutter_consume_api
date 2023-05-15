@@ -70,6 +70,7 @@ class _LoginState extends State<Login> {
                             decoration: InputDecoration(
                               hintText: "Email",
                             ),
+                            initialValue: "qwerty5@gmail.com", // remove me!
                             validator: (emailValue) {
                               // Fungsi validator akan dipanggil saat user submit form.
                               // Pada bagian ini, kita melakukan validasi terhadap input email.
@@ -85,6 +86,7 @@ class _LoginState extends State<Login> {
                         SizedBox(height: 12),
                         TextFormField(
                             cursorColor: Colors.blue,
+                            initialValue: "qwerty", // remove me!
                             keyboardType: TextInputType.text,
                             obscureText: _secureText,
                             decoration: InputDecoration(
@@ -183,10 +185,8 @@ class _LoginState extends State<Login> {
 
     final res = await Network().postRequest(
         route: '/login',
-        data:
-            data); // melakukan request POST ke endpoint /login pada server dengan menggunakan data yang sudah didefinisikan sebelumnya
-    final response = jsonDecode(res
-        .body); // mengubah respon dari server yang diterima JSON format menjadi object atau data
+        data: data); // melakukan request POST ke endpoint /login pada server dengan menggunakan data yang sudah didefinisikan sebelumnya
+    final response = jsonDecode(res.body); // mengubah respon dari server yang diterima JSON format menjadi object atau data
 
     if (response['status'] == 200) {
       // jika status respon dari server adalah 200, maka login berhasil
